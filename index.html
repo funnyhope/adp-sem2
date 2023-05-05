@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>~/startpage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="clock-box">
+        <div id="clockbox"></div>
+
+        <script type="text/javascript">
+        function GetClock(){
+        var d=new Date();
+        var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+        if(nmin<=9) nmin="0"+nmin;
+        if(nsec<=9) nsec="0"+nsec;
+        
+        var clocktext=""+nhour+":"+nmin+":"+nsec+"";
+        document.getElementById('clockbox').innerHTML=clocktext;
+        }
+        
+        GetClock();
+        setInterval(GetClock,1000);
+        </script>
+        
+        <div id="datebox"></div>
+        
+        <script type="text/javascript">
+        var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        function GetClock(){
+        var d=new Date();
+        var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+        var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+"";
+        document.getElementById('datebox').innerHTML=clocktext;
+        }
+
+        GetClock();
+        setInterval(GetClock,1000);
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="left-container">
+            <div class="gif">
+                <img src="cube.gif" />
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="head">
+                <p style="color: #008080"> ~ welcome ~<span class="blinking">_</span></p>
+            </div>
+
+            <div class="bookmarks">
+                <div class="category">
+                    <div class="links">
+                        <li class="title">work</li>
+                        <li><a href="https://gmail.com" target="_blank">gmail</a></li>
+                        <li><a href="https://linkedin.com" target="_blank">linkedin</a></li>
+                        <li><a href="https://netacad.com" target="_blank">cisco</a></li>
+                        <li><a href="https://" target="_blank">--</a></li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+                        <li class="title">dev</li>
+                        <li><a href="https://github.com/" target="_blank">github</a></li>
+                        <li><a href="https://gitlab.com/" target="_blank">gitlab</a></li>
+                        <li><a href="https://mankier.com/" target="_blank">man</a></li>
+                        <li><a href="https://devdocs.io/" target="_blank">docs</a></li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+                        <li class="title">reddit</li>
+                        <li><a href="https://reddit.com/r/debian/" target="_blank">debian</a></li>
+                        <li><a href="https://reddit.com/r/PixelArt/" target="_blank">pixel</a></li>
+                        <li><a href="https://reddit.com/r/emulation/" target="_blank">emulation</a></li>
+                        <li><a href="https://reddit.com/r/wallpaperdump/" target="_blank">walls</a></li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+                        <li class="title">play</li>
+                        <li><a href="https://youtube.com/" target="_blank">youtube</a></li>
+                        <li><a href="https://primevideo.com/" target="_blank">prime</a></li>
+                        <li><a href="https://monkeytype.com/" target="_blank">type</a></li>
+                        <li><a href="https://open.spotify.com/" target="_blank">music</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sign-out">
+        <button><a href="login.html"><i class="fas fa-door-open"></i></a></button>
+    </div>
+</body>
+
+</html>
