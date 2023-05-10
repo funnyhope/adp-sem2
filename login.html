@@ -55,7 +55,7 @@
 </head>
 
 <body>
-	<form id="login-form" action="index.html" method="post">
+	<form id="login-form">
 		<div class="container">
 			<label for="username"><b>Username</b></label>
 			<input type="text" placeholder="Enter Username" name="username" id="username" required>
@@ -63,7 +63,7 @@
 			<label for="password"><b>Password</b></label>
 			<input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-			<button type="submit" id="login-btn">Login</button>
+			<button type="submit" id="login-btn" onclick="redirectFun()";>Login</button>
 		</div>
 	</form>
 	<i class="icon fas fa-info-circle"></i>
@@ -75,9 +75,19 @@
 			if (username !== "akash" || password !== "pass") {
 				event.preventDefault(); // Prevent form submission
 				alert("Invalid username or password!"); // Show error message
+				flag = 1
+			}
+			else{
+				flag=0
 			}
 		});
 	</script>
+	<script type="text/javascript">
+      		function redirectFun(){
+          		setTimeout(function () 
+          		{ if(flag==0){window.location = "/adp-sem2/"} }, 1);
+      			};
+        </script>   
 </body>
 
 </html>
